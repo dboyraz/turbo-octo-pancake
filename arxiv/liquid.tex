@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{indentfirst}
+\usepackage{arabtex}
+\usepackage{amssymb}
+\usepackage{amsmath,amsthm}
+\usepackage{color, xcolor}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{graphicx}
+%\usepackage{natbib}
+\usepackage{url}
+\usepackage{authblk}
+\usepackage{pgfplots}
+\usepackage[inline, shortlabels]{enumitem}
+
+
+\usepackage{tikz-qtree}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes,arrows,chains}
+\usetikzlibrary{automata,positioning}
+\tikzset{edge from parent/.append style={<-}}
+\tikzstyle{sn}=[circle, draw, align=center, fill=white!50, inner sep=0pt, minimum size=0.6cm]
+
+\tikzstyle{kn}=[circle, draw, align=center, fill=white!50, inner sep=0pt,
+minimum size=1.6cm]
+
+\tikzstyle{fsn}=[circle, draw, fill=blue!30, inner sep=0pt, minimum size=0.6cm]
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+\newtheorem{note}{Note}
+\newtheorem{open}{Open}
+\newtheorem{example}{Example}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{observation}{Observation}
+
+\pgfplotsset{votegas/.style={%
+  ytick={1000000, 2000000, 3000000, 4000000, 5000000, 6000000,
+  7000000, 8000000},
+  ylabel= {Gas Cost},
+  xlabel = {Length of delegate chain},
+  ymin=0,
+  ymax=9000000,
+  xmax = 3200,
+  xmin = 0,
+  scale only axis
+  %width=0.9\textwidth,
+  %height=0.6\textwidth,
+  %legend style={legend pos=north west, font=\normalsize},
+  %xmin=0.01,
+  %every axis/.append style={font=\normalsize}
+}
+}
+\begin{document}
+	\pagestyle{empty}
+
+	\title{Implement Liquid Democracy on Ethereum: A Fast Algorithm for Realtime Self-tally Voting System}
+\author[1]{Xuepeng Fan \thanks{xuepeng.fan@asresearch.io}}
+\author[2]{Peng Li \thanks{pengli@u-aizu.ac.jp}}
+\author[1]{Yulong Zeng \thanks{yulong.zeng@asresearch.io}}
+\author[2]{Xiaoping Zhou \thanks{d8211110@u-aizu.ac.jp}}
+\affil[1]{Autonomous System Research}
+\affil[2]{The University of Aizu}
+
+	%{\author{Xuepeng Fan\\ASResearch\\xuepeng.fan@asreserach.io}
+	%\author{Peng Li\\The University of Aizu\\pengli@u-aizu.ac.jp}
+	%\author{Yulong Zeng\\ASResearch\\yulong.zeng@asreserach.io}
+	%\author{Xiaoping Zhou\\The University of Aizu\\d8211110@u-aizu.ac.jp}}
+\maketitle
+\begin{abstract}
+	We study the liquid democracy problem, where each voter can either directly vote to a candidate or delegate his voting power to a proxy. We consider the implementation of liquid democracy on the blockchain through Ethereum smart contract and to be compatible with the realtime self-tallying property, where the contract itself can record  ballots and update voting status upon receiving each voting massage.  A challenge comes due to the gas fee limitation of Ethereum mainnet, that the number of instruction for processing a voting massage can not exceed a certain amount, which restrict the application scenario with respect to algorithms whose time complexity is linear to the number of voters. We propose a fast algorithm to overcome the challenge, such that i) shifts the on-chain initialization to off-chain and ii) the on-chain complexity for processing each voting massage is $O(\log n)$, where $n$ is the number of voters. %Experimental results show that our algorithm supports $n=1000000$ in the worst case for liquid democracy on Ethereum mainnet.
+\end{abstract}
+
+\input{intro.tex}
+\input{related.tex}
+\input{preliminary.tex}
+\input{algorithm.tex}
+\input{theorem.tex}
+\input{experiment.tex}
+\section*{Acknowledgment}
+We thank Ying Liu from Peking University for the advising the algorithm.
+
+\bibliographystyle{plain}
+\bibliography{liquid}
+\end{document}

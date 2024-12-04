@@ -1,0 +1,20 @@
+1 - install cmake
+
+2 - install vcpkg
+	git clone https://github.com/microsoft/vcpkg.git
+	cd vcpkg
+	.\bootstrap-vcpkg.bat
+
+3 - install glog
+	.\vcpkg.exe install glog
+	.\vcpkg.exe integrate install
+
+4 - go to cpp -> algo folder, then
+	mkdir build
+	cd build
+	cmake -DCMAKE_TOOLCHAIN_FILE=C:/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+	(üstte pathı değiştirmeyi unutma)
+	
+5 - build
+	cmake --build . --config Release
+

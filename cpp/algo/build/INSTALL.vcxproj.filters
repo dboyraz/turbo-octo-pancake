@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\deniz\Desktop\liquid-voting-master\cpp\algo\build\CMakeFiles\77dc450ff0637dcb4fae17079f91aeb7\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{68FF5D11-2FAB-3E0C-9707-6DFCDB1734A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+^C:\USERS\DENIZ\DESKTOP\LIQUID-VOTING-MASTER\CPP\ALGO\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\4DA3599A3C8D26EC048B8BBA961AD5ED\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/deniz/Desktop/liquid-voting-master/cpp/algo/build/_deps/googletest-subbuild -BC:/Users/deniz/Desktop/liquid-voting-master/cpp/algo/build/_deps/googletest-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/deniz/Desktop/liquid-voting-master/cpp/algo/build/_deps/googletest-subbuild/googletest-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
